@@ -1,6 +1,11 @@
 package com.example.myapplication9777;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +14,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -18,6 +32,7 @@ public class MainMenu extends AppCompatActivity {
     public TextView user_name, user_email;
 
     private Button signoutBtn;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +44,7 @@ public class MainMenu extends AppCompatActivity {
         user_name = findViewById(R.id.name);
         user_email = findViewById(R.id.email);
         signoutBtn = findViewById(R.id.signOutBtn);
+
 
         String userName = getIntent().getStringExtra("USER_NAME");
         String userEmail = getIntent().getStringExtra("USER_EMAIL");
@@ -42,6 +58,8 @@ public class MainMenu extends AppCompatActivity {
                 signOut();
             }
         });
+
+
 
     }
 

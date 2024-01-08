@@ -50,9 +50,8 @@ public class LogIn extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(AuthResult authResult) {
                                         Toast.makeText(LogIn.this, "Logged in as "+loginName.getText().toString(), Toast.LENGTH_SHORT).show();
-                                        //startActivity(new Intent(LogIn.this, MainMenu.class));
                                         finish();
-                                        Intent intent = new Intent(LogIn.this, MainMenu.class);
+                                        Intent intent = new Intent(LogIn.this, MainViewActivity.class);
                                         intent.putExtra("USER_NAME", name);
                                         intent.putExtra("USER_EMAIL", email);
                                         startActivity(intent);

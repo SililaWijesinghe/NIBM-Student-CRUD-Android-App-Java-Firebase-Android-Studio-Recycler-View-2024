@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/pagebg"
+    android:background="@drawable/pagebg2"
     tools:context=".SignUp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp">
+        android:layout_marginTop="23dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
 
         <ImageView
             android:layout_width="100dp"
@@ -35,7 +37,7 @@
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             android:padding="24dp"
-            android:background="@drawable/custom_edittext">
+            android:background="@drawable/pagebg2">
 
             <TextView
                 android:layout_width="match_parent"
