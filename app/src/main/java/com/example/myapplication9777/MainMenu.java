@@ -45,7 +45,10 @@ public class MainMenu extends AppCompatActivity {
         user_email = findViewById(R.id.email);
         signoutBtn = findViewById(R.id.signOutBtn);
 
+        // Initialize fab here
+        fab = findViewById(R.id.fab);
 
+        //Later I need to pass the data to those below by storing them it in the Login
         String userName = getIntent().getStringExtra("USER_NAME");
         String userEmail = getIntent().getStringExtra("USER_EMAIL");
 
@@ -59,9 +62,18 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-
-
+        // Check if fab is not null before setting OnClickListener
+        if (fab != null) {
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainMenu.this, MainViewActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
+
 
     private void signOut() {
         auth.signOut();

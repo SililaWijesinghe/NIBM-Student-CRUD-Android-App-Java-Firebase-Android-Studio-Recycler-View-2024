@@ -51,7 +51,7 @@ public class LogIn extends AppCompatActivity {
                                     public void onSuccess(AuthResult authResult) {
                                         Toast.makeText(LogIn.this, "Logged in as "+loginName.getText().toString(), Toast.LENGTH_SHORT).show();
                                         finish();
-                                        Intent intent = new Intent(LogIn.this, MainViewActivity.class);
+                                        Intent intent = new Intent(LogIn.this, MainMenu.class);
                                         intent.putExtra("USER_NAME", name);
                                         intent.putExtra("USER_EMAIL", email);
                                         startActivity(intent);

@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="nibm_blue">#38418A</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="red">#c70000</color>
+    <color name="green">#00ff00</color>
 
     <color name="blue_shade_1">#0e2433</color>
     <color name="blue_shade_2">#1C4966</color>

@@ -17,24 +17,18 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DateFormat;
+import java.util.Calendar;
 
 public class UploadActivity extends AppCompatActivity {
 
@@ -125,6 +119,7 @@ public class UploadActivity extends AppCompatActivity {
 
     public void uploadData() {
 
+
         String registerNumber = regNo.getText().toString();
         String studentName = stdName.getText().toString();
         Integer studentAge = Integer.valueOf(stdAge.getText().toString());
@@ -135,7 +130,9 @@ public class UploadActivity extends AppCompatActivity {
         DataClass dataClass = new DataClass(registerNumber, studentName, studentAge, studentGender, studentContactNumber,
                 studentParentNumber, imageURL);
 
-        FirebaseDatabase.getInstance().getReference("Students").child(registerNumber)
+        String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+
+        FirebaseDatabase.getInstance().getReference("Students").child(currentDate)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

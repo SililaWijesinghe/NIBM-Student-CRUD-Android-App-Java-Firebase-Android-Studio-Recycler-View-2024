@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/pagebg2"
+    tools:context=".DetailActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/pagebg2"
+        tools:context=".DetailActivity">
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="@drawable/pagebg2">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailName"
+        android:text="Name"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/nibm_blue"
+        />
+    
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        android:id="@+id/detailImage"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:src="@drawable/baseline_person_24"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:text="Register Number"
+        android:layout_gravity="center"
+        android:id="@+id/detialRegNo"
+        android:textSize="15sp"
+        />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Age"
+                android:layout_gravity="center"
+                android:id="@+id/detialAge"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Gender"
+                android:layout_gravity="center"
+                android:id="@+id/detialGender"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Contact Number"
+                android:layout_gravity="center"
+                android:id="@+id/detialContact"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Parent Number"
+                android:layout_gravity="center"
+                android:id="@+id/detialParentNo"
+                android:textSize="15sp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.github.clans.fab.FloatingActionMenu
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    app:menu_fab_size="normal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:menu_colorPressed="@color/white"
+                    app:menu_colorNormal="@color/nibm_blue"
+                    app:menu_icon="@drawable/baseline_format_list_bulleted_24"
+                    app:menu_openDirection="up"
+                    app:menu_showShadow="false"
+                    >
+
+                    <com.github.clans.fab.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editBtn"
+                        android:src="@drawable/baseline_mode_edit_24"
+                        app:fab_showShadow="true"
+                        app:fab_colorNormal="@color/green"
+                        app:fab_colorPressed="@color/white"
+                        app:fabSize="mini"
+                        />
+
+                    
+                    <com.github.clans.fab.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/deleteBtn"
+                        android:src="@drawable/baseline_delete_24"
+                        app:fab_showShadow="true"
+                        app:fab_colorNormal="@color/red"
+                        app:fab_colorPressed="@color/white"
+                        app:fabSize="mini"
+                        />
+
+                </com.github.clans.fab.FloatingActionMenu>
+
+            </RelativeLayout>
+
+
+
+</LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
