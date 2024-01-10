@@ -1,0 +1,47 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
+
+                  - name: Run Parasoft Jtest
+  # You may pin to the exact commit or the version.
+  # uses: parasoft/run-jtest-action@ae433ddf714970d4a40842e7a4788facd508d68d
+  uses: parasoft/run-jtest-action@2.0.0
+  with:
+    # Installation folder of Parasoft Jtest. If not specified, the cpptestcli executable must be added to PATH.
+    installDir: # optional
+    # Working directory for running Jtest.
+    workingDir: # optional, default is ${{ github.workspace }}
+    # Test configuration to be used for code analysis.
+    testConfig: # optional, default is builtin://Recommended Rules
+    # Output folder for reports from code analysis.
+    reportDir: # optional, default is reports
+    # Format of reports from code analysis.
+    reportFormat: # optional, default is xml,html,sarif
+    # Input scope for analysis.
+    input: # optional, default is jtest.data.json
+    # Additional parameters for the jtestcli executable.
+    additionalParams: # optional, default is 
+          
